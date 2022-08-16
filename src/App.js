@@ -12,7 +12,7 @@ export default function App() {
   /* Use this to get some characters */
   //const [characters] = useCharacters({ids: [1, 2, 3]});
   
-  /* Use this to get one result */
+  /* Use this to get a specific result */
   //const [characters] = useCharacters({ids: [1]});
   
   return (
