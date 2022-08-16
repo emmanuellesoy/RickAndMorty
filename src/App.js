@@ -1,37 +1,27 @@
-import { useEffect, useState } from "react";
-import "./styles.css";
+import "./styles/app.css";
 
-const CharsTable = () => {
-  return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Character</th>
-          <th>Image</th>
-          <th>Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Rick</td>
-          <td>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
-          </td>
-          <td>Earth (Replacement Dimension)</td>
-        </tr>
-      </tbody>
-    </table>
-  );
-};
+import CharsTable from "./components/CharsTable";
+import useCharacters from "./hooks/useCharacters";
+
 
 export default function App() {
+  
+  /* Use this to get first result page from API */
+  const [characters] = useCharacters();
+  
+  /* Use this to get some characters */
+  //const [characters] = useCharacters({ids: [1, 2, 3]});
+  
+  /* Use this to get a specific result */
+  //const [characters] = useCharacters({ids: [1]});
+  
   return (
     <div className="App">
       <h1>Hello Softtek</h1>
-      <CharsTable />
+      <CharsTable characters={characters} />
     </div>
   );
-}
+};
 
 // You can add the libraries you need in the left sidebar under "Dependencies" section
 
